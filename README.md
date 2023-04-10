@@ -16,3 +16,6 @@
 
 ## *Arquitetura da Solução:*
     Descrição da solução, com breve explicação de como o código foi organizado e pensado.
+
+## *Link para repositório GitHub:*
+    https://github.com/trunksrage24/LP1Projeto1.git
