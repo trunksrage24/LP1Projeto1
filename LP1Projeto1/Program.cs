@@ -15,19 +15,36 @@ namespace LP1Projeto1
             bool LAMP1=false;
             bool LAMP2=false;
             bool LAMP3=false;
-
+            string Lamp1str="OFF";
+            string Lamp2str="OFF";
+            string Lamp3str="OFF";
             
             while (NumbMoves<7)
             {
+            if (LAMP1==false){
+                Lamp1str="OFF";
+            }else{Lamp1str="ON";} 
+
+            if (LAMP2==false){
+                Lamp2str="OFF";
+            }else{Lamp2str="ON";} 
+
+            if (LAMP3==false){
+                Lamp3str="OFF";
+            }else{Lamp3str="ON";} 
+
+
+            Console.WriteLine("Lamps Status:");  
+            Console.WriteLine("Lamp 1: "+Lamp1str+"\n"+
+                              "Lamp 2: "+Lamp2str+"\n"+
+                              "Lamp 3: "+Lamp3str);  
             Console.WriteLine("Clicks on buttons: "+NumbMoves);
             Console.WriteLine("Which button will you press? B1,B2 or B3.");
             string ChosenBUT=Console.ReadLine();
 
             if (ChosenBUT=="B1" || ChosenBUT=="b1"){
+                LAMP1=!LAMP1;
                 
-                
-
-
             }
             else if (ChosenBUT=="B2" || ChosenBUT=="b2"){
                 
@@ -48,5 +65,7 @@ namespace LP1Projeto1
             }
             
         }
+
+        
     }
 }
