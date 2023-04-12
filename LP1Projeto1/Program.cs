@@ -25,9 +25,9 @@ namespace LP1Projeto1
             bool LAMP3=false;
 
             //variables to be used to SHOW the current state of the lamps
-            string Lamp1str="OFF";
-            string Lamp2str="OFF";
-            string Lamp3str="OFF";
+            string Lamp1str;
+            string Lamp2str;
+            string Lamp3str;
             
             //loop until user gets to 7 clicks on buttons
             while (NumbMoves<7)
@@ -37,7 +37,7 @@ namespace LP1Projeto1
                 store the suitable value between ON or OFF, to later show 
                 to the user the current state of the lamp */
             
-                if (LAMP1==false)
+                if (!LAMP1)
                 {
                     Lamp1str="OFF";
                 }
@@ -47,7 +47,7 @@ namespace LP1Projeto1
                     Lamp1str="ON";
                 } 
 
-                if (LAMP2==false)
+                if (!LAMP2)
                 {
                     Lamp2str="OFF";
                 }
@@ -57,7 +57,7 @@ namespace LP1Projeto1
                     Lamp2str="ON";
                 } 
 
-                if (LAMP3==false)
+                if (!LAMP3)
                 {
                     Lamp3str="OFF";
                 }
@@ -133,7 +133,6 @@ namespace LP1Projeto1
 
             }
             
-        }
-        
+        }        
     }
 }
