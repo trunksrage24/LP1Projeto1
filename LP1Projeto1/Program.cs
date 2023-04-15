@@ -1,9 +1,5 @@
 ﻿using System;
 
-/* B->BOTÃO L->LAMPADA
-1B-->1L  2B-->1L,2L   3B-->2L,3L
-Maximo de 6 jogadas. */
-
 namespace LP1Projeto1
 {
     class Program
@@ -16,123 +12,89 @@ namespace LP1Projeto1
         {
             Console.WriteLine("Starting Game!");
 
-            //count variable to count number of times user clicked buttons
-            int NumbMoves=0;
+            // count variable to count number of times user clicked buttons
+            int numMoves = 0;
 
-            //variables to store the current state of the lamps
-            bool LAMP1=false;
-            bool LAMP2=false;
-            bool LAMP3=false;
+            // variables to store the current state of the lamps
+            bool lamp1 = false;
+            bool lamp2 = false;
+            bool lamp3 = false;
 
-            //variables to be used to SHOW the current state of the lamps
-            string Lamp1str;
-            string Lamp2str;
-            string Lamp3str;
-            
-            //loop until user gets to 7 clicks on buttons
-            while (NumbMoves<7)
+            // variables to be used to SHOW the current state of the lamps
+            string lamp1Str;
+            string lamp2Str;
+            string lamp3Str;
+
+            // loop until user gets to 7 clicks on buttons
+            while (numMoves < 7)
             {
-            
-                /* depending on what state each lamp is, the STR variables will
-                store the suitable value between ON or OFF, to later show 
-                to the user the current state of the lamp */
-            
-                if (!LAMP1)
+                // depending on what state each lamp is, the STR variables will
+                // store the suitable value between ON or OFF, to later show 
+                // to the user the current state of the lamp
+                lamp1Str = lamp1 ? "ON" : "OFF";
+                lamp2Str = lamp2 ? "ON" : "OFF";
+                lamp3Str = lamp3 ? "ON" : "OFF";
+
+                // shows the current status of all lamps
+                Console.WriteLine("Lamps Status:");
+                Console.WriteLine($"Lamp 1: {lamp1Str}\n" +
+                                  $"Lamp 2: {lamp2Str}\n" +
+                                  $"Lamp 3: {lamp3Str}");
+
+                // shows clicks made
+                Console.WriteLine($"Clicks on buttons: {numMoves}");
+
+                Console.WriteLine("Which button will you press? B1, B2 or B3.");
+
+                string chosenBut = Console.ReadLine();
+
+                // each if for each button
+                if (chosenBut.ToLower() == "b1")
                 {
-                    Lamp1str="OFF";
+                    // switchs the value between TRUE or FALSE
+                    lamp1 = !lamp1;
+
+                    // increment moves by 1
+                    numMoves++;
                 }
-
-                else
+                else if (chosenBut.ToLower() == "b2")
                 {
-                    Lamp1str="ON";
-                } 
-
-                if (!LAMP2)
-                {
-                    Lamp2str="OFF";
-                }
-
-                else
-                {
-                    Lamp2str="ON";
-                } 
-
-                if (!LAMP3)
-                {
-                    Lamp3str="OFF";
-                }
-                
-                else
-                {
-                    Lamp3str="ON";
-                } 
-
-                //shows the current status of all lamps
-                Console.WriteLine("Lamps Status:");  
-                Console.WriteLine("Lamp 1: "+Lamp1str+"\n"+
-                                "Lamp 2: "+Lamp2str+"\n"+
-                                "Lamp 3: "+Lamp3str);  
-
-                //Shows clicks made                  
-                Console.WriteLine("Clicks on buttons: "+NumbMoves);
-
-                Console.WriteLine("Which button will you press? B1,B2 or B3.");
-                
-                string ChosenBUT=Console.ReadLine();
-                
-                //each if for each button
-                if (ChosenBUT=="B1" || ChosenBUT=="b1")
-                {
-                    //switchs the value between TRUE or FALSE
-                    LAMP1 = !LAMP1;
-                    
-                    //increment moves by 1
-                    NumbMoves += 1;
-                }
-
-                else if (ChosenBUT=="B2" || ChosenBUT=="b2")
-                {
-                    if (LAMP1 != LAMP2)
+                    if (lamp1 != lamp2)
                     {
-                        LAMP1 = !LAMP1;
-                        LAMP2 = !LAMP2;
-                    
-                        //increment moves by 1
-                        NumbMoves += 1;
+                        lamp1 = !lamp1;
+                        lamp2 = !lamp2;
+
+                        // increment moves by 1
+                        numMoves++;
                     }
                 }
-
-                else if (ChosenBUT=="B3" || ChosenBUT=="b3")
+                else if (chosenBut.ToLower() == "b3")
                 {
-                    if (LAMP2 != LAMP3) 
+                    if (lamp2 != lamp3)
                     {
-                        LAMP2 = !LAMP2;
-                        LAMP3 = !LAMP3;
-                    
-                        //increment moves by 1
-                        NumbMoves += 1;
+                        lamp2 = !lamp2;
+                        lamp3 = !lamp3;
+
+                        // increment moves by 1
+                        numMoves++;
                     }
                 }
-
-                //when the input is not what is wanted
+                // when the input is not what is wanted
                 else
                 {
                     Console.WriteLine("No valid input");
                 }
 
-                
-                if (LAMP1 == true && LAMP2 == true && LAMP3 == true)
+                if (lamp1 && lamp2 && lamp3)
                 {
                     Console.WriteLine("Congrats, you won the game!");
                     Console.WriteLine("Lamps Status:");
-                    Console.WriteLine("Lamp 1: "+ Lamp1str+"\n"+
-                                    "Lamp 2: "+Lamp2str+"\n"+
-                                    "Lamp 3: "+Lamp3str); 
+                    Console.WriteLine($"Lamp 1: {lamp1Str}\n" +
+                                      $"Lamp 2: {lamp2Str}\n" +
+                                      $"Lamp 3: {lamp3Str}");
                     break;
                 }
-
             }
-            
-        }        
+        }
     }
 }
