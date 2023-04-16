@@ -15,7 +15,13 @@
     - Fluxograma produzido por João
 
 ## *Arquitetura da Solução:*
-    Descrição da solução, com breve explicação de como o código foi organizado e pensado.
+    - Inicialmente fez-se a estrutura do código com base numa ideia inicial 
+    discutida entre os membros em que cada butão tinha um "if" para mudar o
+    estado da lâmpada;
+    - Foi-se desenvolvendo a ideia completando a mesma e reescrevendo-a de 
+    forma mais correta/organizada;
+    - Para finalizar o João fez o fluxograma e o Vitor fez completou o 
+    relatório do projeto.
 
 ## *Link para repositório GitHub:*
     https://github.com/trunksrage24/LP1Projeto1.git
