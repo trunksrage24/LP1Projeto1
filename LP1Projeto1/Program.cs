@@ -105,9 +105,25 @@ namespace LP1Projeto1
                     Console.WriteLine($"Lamp 1: {lamp1Str}\n" + 
                                       $"Lamp 2: {lamp2Str}\n" +
                                       $"Lamp 3: {lamp3Str}");
+                    // shows clicks made
+                    Console.WriteLine($"Clicks on buttons: {numMoves}");
 
                     break;
+                }
+                if(numMoves >= 6 && !(lamp1 && lamp2 && lamp3))
+                {
+                    Console.WriteLine("Lamps Status:");
                     
+                    Console.WriteLine($"Lamp 1: {lamp1Str}\n" + 
+                                      $"Lamp 2: {lamp2Str}\n" +
+                                      $"Lamp 3: {lamp3Str}");
+
+                    // shows clicks made
+                    Console.WriteLine($"Clicks on buttons: {numMoves}");
+
+                    Console.WriteLine("GAME OVER!!! \nYou couldn't finish the game in 6 moves... Better luck next time");
+                    
+                    break;
                 }
             }
         }
