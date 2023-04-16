@@ -85,31 +85,6 @@ namespace LP1Projeto1
                     Console.WriteLine("No valid input");
                 }
 
-                if (lamp1 && lamp2 && lamp3)
-                {
-                    //update lamp booleans before ending the game
-                    lamp1 = true;
-                    lamp2 = true;
-                    lamp3 = true;
-
-                    /* depending on what state each lamp is, the STR variables 
-                    will store the suitable value between ON or OFF, to later 
-                    show to the user the current state of the lamp */
-                    lamp1Str = lamp1 ? "ON" : "OFF";
-                    lamp2Str = lamp2 ? "ON" : "OFF";
-                    lamp3Str = lamp3 ? "ON" : "OFF";
-
-                    Console.WriteLine("Congratulations, you won the game!");
-                    Console.WriteLine("Lamps Status:");
-                    
-                    Console.WriteLine($"Lamp 1: {lamp1Str}\n" + 
-                                      $"Lamp 2: {lamp2Str}\n" +
-                                      $"Lamp 3: {lamp3Str}");
-                    // shows clicks made
-                    Console.WriteLine($"Clicks on buttons: {numMoves}");
-
-                    break;
-                }
                 if(numMoves >= 6 && !(lamp1 && lamp2 && lamp3))
                 {
                     Console.WriteLine("Lamps Status:");
@@ -123,6 +98,32 @@ namespace LP1Projeto1
 
                     Console.WriteLine("GAME OVER!!! \nYou couldn't finish the game in 6 moves... Better luck next time");
                     
+                    break;
+                }
+                else if (lamp1 && lamp2 && lamp3)
+                {
+                    //update lamp booleans before ending the game
+                    lamp1 = true;
+                    lamp2 = true;
+                    lamp3 = true;
+
+                    /* depending on what state each lamp is, the STR variables 
+                    will store the suitable value between ON or OFF, to later 
+                    show to the user the current state of the lamp */
+                    lamp1Str = lamp1 ? "ON" : "OFF";
+                    lamp2Str = lamp2 ? "ON" : "OFF";
+                    lamp3Str = lamp3 ? "ON" : "OFF";
+
+                    Console.WriteLine("Lamps Status:");
+                    
+                    Console.WriteLine($"Lamp 1: {lamp1Str}\n" + 
+                                      $"Lamp 2: {lamp2Str}\n" +
+                                      $"Lamp 3: {lamp3Str}");
+                    // shows clicks made
+                    Console.WriteLine($"Clicks on buttons: {numMoves}");
+
+                    Console.WriteLine("Congratulations, you won the game!");
+
                     break;
                 }
             }
