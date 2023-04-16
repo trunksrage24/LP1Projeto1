@@ -37,7 +37,7 @@ namespace LP1Projeto1
 
                 // shows the current status of all lamps
                 Console.WriteLine("Lamps Status:");
-                Console.WriteLine($"Lamp 1: {lamp1Str}\n" +
+                Console.WriteLine($"Lamp 1: {lamp1Str}\n" + 
                                   $"Lamp 2: {lamp2Str}\n" +
                                   $"Lamp 3: {lamp3Str}");
 
@@ -101,10 +101,10 @@ namespace LP1Projeto1
 
                     Console.WriteLine("Congratulations, you won the game!");
                     Console.WriteLine("Lamps Status:");
-                    Console.WriteLine($"Lamp 1: {lamp1Str}\n" +
+                    
+                    Console.WriteLine($"Lamp 1: {lamp1Str}\n" + 
                                       $"Lamp 2: {lamp2Str}\n" +
                                       $"Lamp 3: {lamp3Str}");
-
 
                     break;
                     
