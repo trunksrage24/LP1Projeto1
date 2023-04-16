@@ -84,7 +84,7 @@ namespace LP1Projeto1
                 {
                     Console.WriteLine("No valid input");
                 }
-
+                //verify if user made 6 moves and the lamps arent "ON"
                 if(numMoves >= 6 && !(lamp1 && lamp2 && lamp3))
                 {
                     Console.WriteLine("Lamps Status:");
@@ -100,6 +100,7 @@ namespace LP1Projeto1
                     
                     break;
                 }
+                //Verify if lamps are "ON"
                 else if (lamp1 && lamp2 && lamp3)
                 {
                     //update lamp booleans before ending the game
