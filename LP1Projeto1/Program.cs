@@ -25,12 +25,12 @@ namespace LP1Projeto1
             string lamp2Str;
             string lamp3Str;
 
-            // loop until user gets to 7 clicks on buttons
+            // loop until user gets to 6 clicks on buttons
             while (numMoves < 7)
             {
-                // depending on what state each lamp is, the STR variables will
-                // store the suitable value between ON or OFF, to later show 
-                // to the user the current state of the lamp
+                /* depending on what state each lamp is, the STR variables 
+                will store the suitable value between ON or OFF, to later 
+                show to the user the current state of the lamp */
                 lamp1Str = lamp1 ? "ON" : "OFF";
                 lamp2Str = lamp2 ? "ON" : "OFF";
                 lamp3Str = lamp3 ? "ON" : "OFF";
@@ -51,7 +51,7 @@ namespace LP1Projeto1
                 // each if for each button
                 if (chosenBut.ToLower() == "b1")
                 {
-                    // switchs the value between TRUE or FALSE
+                    // switches the value between TRUE or FALSE
                     lamp1 = !lamp1;
 
                     // increment moves by 1
@@ -87,12 +87,27 @@ namespace LP1Projeto1
 
                 if (lamp1 && lamp2 && lamp3)
                 {
-                    Console.WriteLine("Congrats, you won the game!");
+                    //update lamp booleans before ending the game
+                    lamp1 = true;
+                    lamp2 = true;
+                    lamp3 = true;
+
+                    /* depending on what state each lamp is, the STR variables 
+                    will store the suitable value between ON or OFF, to later 
+                    show to the user the current state of the lamp */
+                    lamp1Str = lamp1 ? "ON" : "OFF";
+                    lamp2Str = lamp2 ? "ON" : "OFF";
+                    lamp3Str = lamp3 ? "ON" : "OFF";
+
+                    Console.WriteLine("Congratulations, you won the game!");
                     Console.WriteLine("Lamps Status:");
                     Console.WriteLine($"Lamp 1: {lamp1Str}\n" +
                                       $"Lamp 2: {lamp2Str}\n" +
                                       $"Lamp 3: {lamp3Str}");
+
+
                     break;
+                    
                 }
             }
         }
